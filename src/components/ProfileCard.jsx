@@ -8,7 +8,7 @@ function ProfileCard() {
         alt="profile"
         className="avatar"
       />
-      <h2>Kiran Sharma</h2>
+      <h2 className="name">John doe</h2>
       <p className="title">Full Stack Developer</p>
       <p className="desc">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum soluta harum asperiores eos voluptatum minima accusamus ea impedit? Ea quia ullam tenetur laborum inventore incidunt aperiam in dolorum, porro magnam.
