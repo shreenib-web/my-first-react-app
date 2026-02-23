@@ -1,24 +1,38 @@
-import Button from "./components/Button";
-import ProfileCard from "./components/ProfileCard";
+import ProductCard from "./components/ProductCard";
 
 function App() {
+
+  const products = [
+    {
+      id: 1,
+      name: "Wireless Headphones",
+      price: 2999,
+      image: "https://picsum.photos/200?1"
+    },
+    {
+      id: 2,
+      name: "Smart Watch",
+      price: 4999,
+      image: "https://picsum.photos/200?2"
+    },
+    {
+      id: 3,
+      name: "Bluetooth Speaker",
+      price: 1999,
+      image: "https://picsum.photos/200?3"
+    }
+  ];
+
   return (
-    <div style={{ padding: "40px" }}>
-      <h2>Reusable Button Demo</h2>
-
-      <Button text="Save" onClick={() => alert("Saved")} />
-
-      <Button
-        text="Cancel"
-        type="secondary"
-        onClick={() => alert("Cancelled")}
-      />
-
-      <Button text="Delete" type="danger" onClick={() => alert("Deleted")} />
-      <ProfileCard />
-      <ProfileCard />
-
-      <ProfileCard />
+    <div style={{ display: "flex", gap: "20px", padding: "40px" }}>
+      {products.map(product => (
+        <ProductCard
+          key={product.id}
+          name={product.name}
+          price={product.price}
+          image={product.image}
+        />
+      ))}
     </div>
   );
 }

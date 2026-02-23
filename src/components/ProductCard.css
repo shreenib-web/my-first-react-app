@@ -1,0 +1,32 @@
+.product-card {
+  width: 220px;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+  background: rgb(77, 72, 72);
+}
+
+.product-img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.price {
+  color: #2e68b1;
+  font-weight: bold;
+  margin: 8px 0;
+}
+
+.buy-btn {
+  background: #2e68b1;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.buy-btn:hover {
+  background: #1f4d8a;
+}

@@ -1,12 +1,14 @@
-import ProductCard from "./ProductCard";
+import "./ProductCard.css";
 
-function App() {
+function ProductCard({ name, price, image }) {
   return (
-    <div>
-      <ProductCard title="Heidelberg Printer" price="2500000" />
-      <ProductCard title="Komori Machine" price="2200000" />
+    <div className="product-card">
+      <img src={image} alt={name} className="product-img" />
+      <h3>{name}</h3>
+      <p className="price">₹ {price}</p>
+      <button className="buy-btn">Buy Now</button>
     </div>
   );
 }
 
-export default App;
+export default ProductCard;
