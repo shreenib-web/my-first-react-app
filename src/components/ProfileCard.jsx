@@ -1,0 +1,21 @@
+import "./ProfileCard.css";
+
+function ProfileCard() {
+  return (
+    <div className="card">
+      <img
+        src="https://i.pravatar.cc/150?img=12"
+        alt="profile"
+        className="avatar"
+      />
+      <h2>Kiran Sharma</h2>
+      <p className="title">Full Stack Developer</p>
+      <p className="desc">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      </p>
+      <button className="btn">Follow</button>
+    </div>
+  );
+}
+
+export default ProfileCard;
