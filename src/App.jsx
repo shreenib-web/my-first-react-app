@@ -1,13 +1,7 @@
-import Counter from "./components/Counter";
-import ToggleButton from "./components/ToggleButton";
+import UserForm from "./components/UserForm";
 
 function App() {
-  return (
-    <>
-      <Counter />
-      <ToggleButton />
-    </>
-  );
+  return <UserForm />;
 }
 
 export default App;
