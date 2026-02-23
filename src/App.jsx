@@ -1,7 +1,13 @@
-import ProfileCard from "./components/ProfileCard";
+import Counter from "./components/Counter";
+import ToggleButton from "./components/ToggleButton";
 
 function App() {
-  return <ProfileCard />;
+  return (
+    <>
+      <Counter />
+      <ToggleButton />
+    </>
+  );
 }
 
 export default App;
