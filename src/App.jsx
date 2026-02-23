@@ -1,7 +1,7 @@
-import UserForm from "./components/UserForm";
+import Auth from "./components/Auth";
 
 function App() {
-  return <UserForm />;
+  return <Auth />;
 }
 
 export default App;
