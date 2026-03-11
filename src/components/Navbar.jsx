@@ -2,53 +2,39 @@ import { useState } from "react";
 import { AppBar, Toolbar, Button, Box } from "@mui/material";
 import logo from "../assets/images/logo.png";
 import "../App.css";
-
+import { NavLinks } from "react-router-dom";
 
 const pages = ["Home", "About", "Services", "News"];
 
 function Navbar() {
-  const [active, setActive] = useState("Home");
-
   return (
-    <AppBar position="static" sx={{ background: "white" }}>
-      <Toolbar>
+    // Container for the navbar
+    <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px 20px', backgroundColor: '#fff', boxShadow: 2 }}>
+      {/* Logo */}
+      <Box sx={{ display: 'flex', alignItems: 'center' }}>
+         <img
+          src={logo}  // Use the imported logo image
+          alt="Logo"
+          style={{ height: '40px' }}
+        />
+      </Box>
 
-        {/* Logo */}
-        <Box sx={{ flexGrow: 1 }}>
-          <img src={logo} alt="Logo" style={{ height: "40px" }} />
-        </Box>
-
-        {/* Nav Links */}
-        <Box>
-          {pages.map((page) => (
-            <Button
-              key={page}
-              onClick={() => setActive(page)}
-              sx={{
-                color: "#25219b",
-                mx: 2,
-                fontWeight: "400",
-                position: "relative",
-
-                "&::after": {
-                  content: '""',
-                  position: "absolute",
-                  width: active === page ? "100%" : "0%",
-                  height: "3px",
-                  bottom: 0,
-                  left: 0,
-                  backgroundColor: "orange",
-                  transition: "0.3s"
-                }
-              }}
-            >
-              {page}
-            </Button>
-          ))}
-        </Box>
-
-      </Toolbar>
-    </AppBar>
+      {/* Navigation links */}
+      <Box sx={{ display: 'flex', gap: 2 }}>
+        <NavLink to="/" style={navLinkStyles}>
+          <Button sx={{ textTransform: 'none' }}>Home</Button>
+        </NavLink>
+        <NavLink to="/about" style={navLinkStyles}>
+          <Button sx={{ textTransform: 'none' }}>About</Button>
+        </NavLink>
+        <NavLink to="/contact" style={navLinkStyles}>
+          <Button sx={{ textTransform: 'none' }}>Services</Button>
+        </NavLink>
+        <NavLink to="/news" style={navLinkStyles}>
+          <Button sx={{ textTransform: 'none' }}>News</Button>
+        </NavLink>
+      </Box>
+    </Box>
   );
 }
 
