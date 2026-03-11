@@ -1,26 +1,50 @@
-import React from "react";
-import AppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
-import Box from "@mui/material/Box";
+import { useState } from "react";
+import { AppBar, Toolbar, Button, Box } from "@mui/material";
+import logo from "../assets/images/logo.png";
+import "../App.css";
+
+
+const pages = ["Home", "About", "Services", "News"];
 
 function Navbar() {
+  const [active, setActive] = useState("Home");
+
   return (
-    <AppBar position="static" sx={{ backgroundColor: "#ffffff", color: "#000" }}>
+    <AppBar position="static" sx={{ background: "white" }}>
       <Toolbar>
 
         {/* Logo */}
-        <Typography variant="h6" sx={{ flexGrow: 1 }}>
-          LOGO
-        </Typography>
+        <Box sx={{ flexGrow: 1 }}>
+          <img src={logo} alt="Logo" style={{ height: "40px" }} />
+        </Box>
 
-        {/* Menu Items */}
+        {/* Nav Links */}
         <Box>
-          <Button color="inherit">Home</Button>
-          <Button color="inherit">About</Button>
-          <Button color="inherit">Services</Button>
-          <Button color="inherit">Contact</Button>
+          {pages.map((page) => (
+            <Button
+              key={page}
+              onClick={() => setActive(page)}
+              sx={{
+                color: "#25219b",
+                mx: 2,
+                fontWeight: "400",
+                position: "relative",
+
+                "&::after": {
+                  content: '""',
+                  position: "absolute",
+                  width: active === page ? "100%" : "0%",
+                  height: "3px",
+                  bottom: 0,
+                  left: 0,
+                  backgroundColor: "orange",
+                  transition: "0.3s"
+                }
+              }}
+            >
+              {page}
+            </Button>
+          ))}
         </Box>
 
       </Toolbar>
