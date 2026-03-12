@@ -1,12 +1,17 @@
 // src/pages/Home.js
 import React from "react";
+import Banner from "../components/Navbar/Banner/Banner";
+import InfoSection from "../components/Navbar/InfoSection/InfoSection";
 
 function Home() {
   return (
     <div>
-      <h1>Home Page</h1>
+      <Banner/>
+      <InfoSection/>
     </div>
   );
 }
 
 export default Home;
+
+// VastuImg-white
